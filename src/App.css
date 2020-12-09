@@ -1,38 +1,160 @@
 .App {
   text-align: center;
+  font-family: "Trebuchet MS", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.QuizCard {
+  margin: auto;
+  width: 40%;
+  height: 100vh;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.bgImage {
+  position: absolute;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(40, 0, 63);
+}
+
+.bgImage img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 10%;
+  background-position: left;
+  filter: grayscale(0.8) brightness(0.8);
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 650px) {
+  .QuizCard {
+    width: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.QuizTitle {
+  font-size: xx-large;
+  color: white;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.Score {
+  color: rgb(255, 255, 255);
+  font-size: large;
+  letter-spacing: 1px;
+}
+
+.QuestionBox {
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 5px black;
+  border-radius: 5px;
+}
+
+.questionNum {
+  color: rgb(85, 85, 85);
+}
+
+.questionStatement {
+  padding: 5px;
+  color: rgb(119, 0, 255);
+  font-weight: bold;
+}
+
+.choiceBtn {
+  padding: 4px;
+}
+
+.choiceBtn button {
+  width: 100%;
+  background-color: white;
+  border: none;
+  padding: 5px;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 3px;
+  outline: none;
+}
+
+.choiceBtn button:hover:enabled {
+  background-color: rgb(2, 133, 255);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.choiceBtn button span {
+  font-size: medium;
+  letter-spacing: 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.choiceBtn .checkedAnswer {
+  background-color: rgb(2, 91, 255);
+  color: white;
+}
+
+.choiceBtn .checkedAnswer span {
+  letter-spacing: 2px;
+}
+
+.nextBtn,
+.startBtn {
+  margin-top: 10px;
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 7px;
+  width: 200px;
+  font-size: large;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px black;
+}
+
+.nextBtn:hover,
+.startBtn:hover {
+  background-color: rgb(0, 102, 255);
+  color: white;
+}
+
+.EndBox {
+  background-color: rgb(119, 0, 255);
+  opacity: 0.8;
+  padding: 20px;
+}
+
+.EndBox .Score {
+  font-size: x-large;
+}
+
+.loading {
+  color: white;
+}
+
+.StartBox {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  width: 200px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.StartBox label {
+  color: rgb(0, 0, 0);
+  padding: 4px;
+}
+
+select {
+  color: rgb(0, 0, 0);
+  background: rgb(236, 236, 236);
+  outline: none;
+  padding: 5px;
+  margin-left: 2px;
+  border: none;
+  border-radius: 2px;
 }
